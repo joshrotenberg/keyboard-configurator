@@ -434,11 +434,9 @@ impl Thread {
             }
         }
 
-        if have_new_board {
-            let _ = self
-                .response_channel
-                .unbounded_send(ThreadResponse::BoardLoadingDone);
-        }
+        let _ = self
+            .response_channel
+            .unbounded_send(ThreadResponse::BoardLoadingDone);
 
         Ok(())
     }
